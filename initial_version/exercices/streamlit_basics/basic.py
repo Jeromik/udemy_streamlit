@@ -21,6 +21,13 @@ def connect_data_csv():
     st.dataframe(data.style.highlight_max(axis=0))
 
 
+def display_write():
+    st.title("Title")
+    st.header("Header")
+    st.subheader("Subheader")
+    st.write("write")
+    st.caption("caption")
+
 #######################################################
 #                       START
 #######################################################
@@ -55,3 +62,5 @@ st.title("Titre dans streamlit v2")
 
 # Affichage du Dataframe
 connect_data_csv()
+
+display_write()
