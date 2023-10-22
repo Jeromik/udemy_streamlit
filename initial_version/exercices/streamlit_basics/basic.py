@@ -1,47 +1,57 @@
+#######################################################
+#                       IMPORT
+#######################################################
+
 import streamlit as st
 import pandas as pd
 from PIL import Image
 
+#######################################################
+#                       DEFINITION
+#######################################################
 
-# Pour augmenter la largeur de l'affichage au max
-def set_page_full():
-    st.markdown(
-        """<style>
-            .reportview-container .main .block-container {
-                max-width: 100%;
-            }
-        </style>""",
-        unsafe_allow_html=True,
-    )
-
-# Pour augmenter la largeur de l'affichage du nombre de pixels précisés
-def set_page_width(width):
-    st.markdown(
-        f"""<style>
-            .reportview-container .main .block-container {{
-                max-width: {width}px;
-            }}
-        </style>""",
-        unsafe_allow_html=True,
-    )
-
-# set_page_full()
-# set_page_width(YOUR_WIDTH_IN_PIXELS)
-
-
+# Lecture du fichier s&p500 dans le dataframe data
 def connect_data_csv():
-    st.header("Streamlit data connect tutorial")
+    st.header("Titre du dataframe")
 
-    MY_PATH = "C:\Users\Jerome\Documents\GitHub\streamee\udemy_streamlit\initial_version\project\s&p500.csv"
+    MY_PATH = "/Users/Jerome/Documents/GitHub/streamee/udemy_streamlit/initial_version/project/s&p500.csv"
 
     data = pd.read_csv(MY_PATH)
-    st.dataframe(data)
+    # st.dataframe(data)
+    st.dataframe(data.style.highlight_max(axis=0))
 
 
+#######################################################
+#                       START
+#######################################################
+
+
+# Titre de la page
 if __name__ == "__main__":
     st.set_page_config(
         page_title="Ma première appli streamlit",
-        layout="centered"
+        # layout="centered",                   # page centrée
+        layout="wide",                      # toute la largeur
+        initial_sidebar_state="expanded",   # sidebar de gauche
     )
 
+
+# Simuler un bandeau en haut de la page
+st.markdown(
+    """
+    <div style="background-color: #e6e6e6; padding: 10px; border-bottom: 2px solid #d4d4d4; margin-bottom: 10px;">
+        Ceci est mon bandeau en haut de la page!
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
+
+# Le reste de votre code Streamlit
+st.write("Le contenu principal de votre application se trouve ici.")
+
+
+# Titre dans la page
 st.title("Titre dans streamlit v2")
+
+# Affichage du Dataframe
+connect_data_csv()
