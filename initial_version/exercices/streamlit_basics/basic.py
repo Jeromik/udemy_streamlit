@@ -33,7 +33,7 @@ def display_media():
     st.header("Streamlit display media tutorial")
     st.subheader("Image")
     image = Image.open("/Users/Jerome/Documents/GitHub/streamee/udemy_streamlit/initial_version/exercices/streamlit_basics/stock.jpeg")
-    st.image(image, caption="@nobody")
+    st.image(image, caption="@nobody", width = 300)
 
 
 #######################################################
