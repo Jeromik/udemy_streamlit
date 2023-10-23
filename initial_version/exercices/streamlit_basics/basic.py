@@ -66,7 +66,7 @@ def display_media():
     container.video(data=VIDEO_DATA)
 
 def layout():
-    st.header("Totu sur le layout")
+    st.header("Tutoriel sur le layout")
 
     #Sidebar
     st.sidebar.title("Titre de barre navigation")  
@@ -78,11 +78,20 @@ def layout():
 
     with col1:
         st.write("colonne 1")
+        st.write("colonne 1")
+        st.write("colonne 1")
 
     with col2:
         st.write("colonne 2")
+        st.write("colonne 2")
 
-
+    #Containers
+    with st.container():
+        st.header("Container 1")
+        st.write("J'adore ...")
+    with st.container():
+        st.header("Container 2")
+        st.write("...les sushis")
 
 #######################################################
 #                       MAIN
