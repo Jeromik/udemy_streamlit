@@ -37,8 +37,9 @@ def display_media():
     st.image(image, caption="@nobody", width = 300)
 
     st.subheader("Audio")
-    audio = Image.open("/Users/Jerome/Documents/GitHub/streamee/udemy_streamlit/initial_version/exercices/streamlit_basics/stock.jpeg")
-    st.image(image, caption="@nobody", width = 300)
+    audio_file = open("/Users/Jerome/Documents/GitHub/streamee/udemy_streamlit/initial_version/exercices/streamlit_basics/audio.ogg", "rb")
+    audio = audio_file.read()
+    st.audio(audio, format="audio/ogg")
 
 
 #######################################################
