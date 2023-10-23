@@ -40,7 +40,11 @@ def display_media():
     audio_file = open("/Users/Jerome/Documents/GitHub/streamee/udemy_streamlit/initial_version/exercices/streamlit_basics/audio.ogg", "rb")
     audio = audio_file.read()
     st.audio(audio, format="audio/ogg")
-
+    
+    st.subheader("Video")
+    video_file = open("/Users/Jerome/Documents/GitHub/streamee/udemy_streamlit/initial_version/exercices/streamlit_basics/video.mp4", "rb")
+    video = video_file.read()
+    st.videoo(video)
 
 #######################################################
 #                       START
