@@ -93,6 +93,11 @@ def layout():
         st.header("Container 2")
         st.write("...les sushis")
 
+    #Expanders
+    st.header("Exemple expander")
+    with st.expander("Expand me"):
+        st.header("""Contenu de l'expander 1""")
+
 #######################################################
 #                       MAIN
 #######################################################
