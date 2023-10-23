@@ -73,8 +73,19 @@ def layout():
     st.sidebar.write("projet des accidents")
     st.sidebar.metric(label="Temperature", value="70 °F", delta="1.2 °F")
 
+    #Columns
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.write("colonne 1")
+
+    with col2:
+        st.write("colonne 2")
+
+
+
 #######################################################
-#                       START
+#                       MAIN
 #######################################################
 
 
@@ -111,3 +122,5 @@ connect_data_csv()
 display_write()
 
 display_media()
+
+layout()
