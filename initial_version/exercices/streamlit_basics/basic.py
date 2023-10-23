@@ -40,11 +40,29 @@ def display_media():
     audio_file = open("/Users/Jerome/Documents/GitHub/streamee/udemy_streamlit/initial_version/exercices/streamlit_basics/audio.ogg", "rb")
     audio = audio_file.read()
     st.audio(audio, format="audio/ogg")
-    
+
+
     st.subheader("Video")
-    video_file = open("/Users/Jerome/Documents/GitHub/streamee/udemy_streamlit/initial_version/exercices/streamlit_basics/video.mp4", "rb")
-    video = video_file.read()
-    st.videoo(video)
+    # video_url = "/Users/Jerome/Documents/GitHub/streamee/udemy_streamlit/initial_version/exercices/streamlit_basics/video.mp4"
+    # html_code = f'<iframe src="{video_url}" width="480" height="320"></iframe>'
+    # st.markdown(html_code, unsafe_allow_html=True)
+
+    # video_file = open("/Users/Jerome/Documents/GitHub/streamee/udemy_streamlit/initial_version/exercices/streamlit_basics/video.mp4", "rb")
+    # video = video_file.read()
+    # st.video(video)
+
+    DEFAULT_WIDTH = 80
+    VIDEO_DATA = "https://www.youtube.com/watch?v=89LPVXrm_Ic"
+
+    # st.set_page_config(layout="wide")
+
+    width = st.sidebar.slider(label="Width", min_value=0, max_value=100, value=DEFAULT_WIDTH, format="%d%%")
+
+    width = max(width, 0.01)
+    side = max((100 - width) / 2, 0.01)
+
+    _, container, _ = st.columns([side, width, side])
+    container.video(data=VIDEO_DATA)
 
 #######################################################
 #                       START
