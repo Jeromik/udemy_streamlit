@@ -65,7 +65,7 @@ def display_media():
     _, container, _ = st.columns([side, width, side])
     container.video(data=VIDEO_DATA)
 
- def layout():
+def layout():
     st.header("Totu sur le layout")
 
     #Sidebar
