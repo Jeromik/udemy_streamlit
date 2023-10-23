@@ -118,6 +118,15 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
+# Cacher des éléments par défaut
+hide_streamlit_style = """
+            <style>
+            # MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
+
 # Le reste de votre code Streamlit
 st.write("Le contenu principal de votre application se trouve ici.")
 
