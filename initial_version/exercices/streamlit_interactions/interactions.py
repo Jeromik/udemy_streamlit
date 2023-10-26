@@ -47,6 +47,29 @@ def multi_select():
     )
     st.write(f"Statut du clic: {color}")
 
+
+def slider():
+    st.header("Slider")
+    slider = st.slider("Entrez un nombre", min_value = 5, max_value = 25, step = 5)
+    st.write(f"Le nombre est : {slider}")
+
+def number_input():
+    st.header("Nombre")
+    number = st.number_input("Entrez un nombre", min_value = 5, max_value = 25, step = 5)
+    st.write(f"Le nombre est : {number}")
+
+def date_input():
+    st.header("Date")
+    date = st.date_input("Entrez une date", datetime.date(2023,8,31))
+    st.write(f"La date est : {date}")   
+
+def camera():
+    st.header("Camera")
+    photo = st.camera_input("Prenez une photo")
+    if photo:
+        st.image(photo)
+
+
 #######################################################
 #                       MAIN
 #######################################################
@@ -75,3 +98,11 @@ if __name__ == "__main__":
     select_box()
 
     multi_select()
+
+    slider()
+
+    number_input()
+
+    date_input()
+
+    camera()
